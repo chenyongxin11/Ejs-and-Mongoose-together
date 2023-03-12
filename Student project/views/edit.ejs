@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="KrisChen" />
+    <meta name="robots" content="index, follow" />
+    <base target="_self" />
+    <meta name="description" content="" />
+    <title> <%= data.name %> - Edit </title>
+  </head>
+  <body>
+    <form action="/students/edit/<%= data.id %>?_method=PUT" method="POST">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" value="<%= data.id %>" >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= data.name %>">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="<%= data.age %>">
+        <label for="merit">Merit</label>
+        <input type="number" id="merit" name="merit" value="<%= data.scholarship.merit %>">
+        <label for="other">Other:</label>
+        <input type="number" name="other" id="other" value="<%= data.scholarship.other %>">
+        <button type="submit">提交</button>
+    </form>
+  </body>
+</html>
